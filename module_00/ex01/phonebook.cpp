@@ -1,8 +1,10 @@
 #include <iostream>
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
-int	main(int argc, char **args)
-{
+int	main(int argc, char **args) {
+
+	Phonebook redBook;
+
 
 	return 0;
 }

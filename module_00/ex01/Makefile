@@ -8,8 +8,8 @@ SRCO = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(SRCO)
-		@clang++ $(SRCO) -o $(NAME)
+$(NAME): $(SRCO) Phonebook.hpp
+		@clang++ $(SRCO) -I Phonebook.hpp -o $(NAME) 
 
 clean:
 		@rm -f $(SRCO)
