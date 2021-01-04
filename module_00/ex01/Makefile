@@ -2,14 +2,16 @@
 
 NAME = phonebook
 
-SRC = phonebook.cpp
+SRC = main.cpp
 
 SRCO = $(SRC:.cpp=.o)
+
+HEADER = Phonebook.hpp
 
 all: $(NAME)
 
 $(NAME): $(SRCO) Phonebook.hpp
-		@clang++ $(SRCO) -I Phonebook.hpp -o $(NAME) 
+		@clang++ $(SRCO) -I $(HEADER) -o $(NAME) 
 
 clean:
 		@rm -f $(SRCO)
