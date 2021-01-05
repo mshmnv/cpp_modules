@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 02:56:14 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/05 12:35:40 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/05 12:55:36 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,12 @@ void		Phonebook::search( void ) {
 	while (21) {
 		std::cin >> index;
 	
-		if (index > 0 && index <= numContacts) {
+		if (index > 0 && index <= this->numContacts) {
 			contact[index - 1].print_information();
 			break ;
 		}
 		else
-			std::cout << "Try once more :)\nEnter the number from " << "1" << " till " << numContacts << ":";
-
+			std::cout << "Try once more :)\nEnter the number from " << "1" << " till " << this->numContacts << ":";
+		// std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 }
