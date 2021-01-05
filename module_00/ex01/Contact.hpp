@@ -1,44 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 02:10:44 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/05 12:04:52 by lbagg            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
 # include <iostream>
+# include <iomanip>
 
 class Contact {
 
 public:
 	Contact(void);
 	~Contact(void);
-	// void	setValue(std::string field, std::string value);
-	// void	getValue(std::string field, std::string value);
+	void		set_firstName( std::string value );
+	void		set_lastName( std::string value );
+	void		set_nickname( std::string value );
+	void		set_login( std::string value );
+	void		set_postalAddress( std::string value );
+	void		set_emailAddress( std::string value );
+	void		set_phonenumber( std::string value );
+	void		set_birthday( std::string value );
+	void		set_favMeal( std::string value );
+	void		set_underwearColor( std::string value );
+	void		set_darkestSecret( std::string value );
+	void		print_contact( int index );
+	void		print_value( std::string value );
+	void		print_information( void );
 
-// private:
-	std::string	firstName;
-	std::string	lastName;
-	std::string	nickname;
-	std::string	login;
-	std::string	postalAddress;
-	std::string	emailAddress;
-	std::string	phonenumber;
-	std::string	birthday;
-	std::string	favMeal;
-	std::string	underwearColor;
-	std::string	darkestSecret;
+
+private:
+	std::string	_firstName;
+	std::string	_lastName;
+	std::string	_nickname;
+	std::string	_login;
+	std::string	_postalAddress;
+	std::string	_emailAddress;
+	std::string	_phonenumber;
+	std::string	_birthday;
+	std::string	_favMeal;
+	std::string	_underwearColor;
+	std::string	_darkestSecret;
 };
-
-Contact::Contact() {
-
-}
-
-Contact::~Contact() {
-
-}
-
-// void	Contact::setValue(std::string field, std::string value) {
-// 	this->firstName = value;
-// }
-
-// void	Contact::getValue(std::string field, std::string value) {
-
-// }
 
 #endif
