@@ -1,17 +1,19 @@
 .PHONY: all clean fclean re
 
-NAME = phonebook
+NAME = open_phonebook
 
-SRC = Phonebook.cpp Contact.cpp
+SRC = Phonebook.class.cpp Contact.class.cpp
 
 SRCO = $(SRC:.cpp=.o)
 
-HEADER = Phonebook.hpp Contact.hpp
+FLAGS = -Wall -Wextra -Werror
+
+HEADER = Phonebook.class.hpp Contact.class.hpp
 
 all: $(NAME)
 
 $(NAME): $(SRCO) main.cpp
-		clang++ main.cpp $(SRCO) -o $(NAME) 
+		clang++ $(FALGS) main.cpp $(SRCO) -o $(NAME)
 
 clean:
 		rm -f $(SRCO)

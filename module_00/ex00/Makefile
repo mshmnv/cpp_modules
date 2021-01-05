@@ -6,10 +6,12 @@ SRC = megaphone.cpp
 
 SRCO = $(SRC:.cpp=.o)
 
+FLAGS = -Wall -Wextra -Werror
+
 all: $(NAME)
 
 $(NAME): $(SRCO)
-		@clang++ $(SRCO) -o $(NAME)
+		@clang++ $(FLAGS) $(SRCO) -o $(NAME)
 
 clean:
 		@rm -f $(SRCO)

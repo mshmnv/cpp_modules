@@ -6,11 +6,11 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 02:56:23 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/05 12:12:44 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/05 22:33:38 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "Contact.class.hpp"
 
 Contact::Contact( void ) {
 

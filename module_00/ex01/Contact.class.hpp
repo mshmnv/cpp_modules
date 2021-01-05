@@ -6,12 +6,12 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 02:10:44 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/05 12:04:52 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/05 22:33:17 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef CONTACT_CLASS_HPP
+# define CONTACT_CLASS_HPP
 
 # include <iostream>
 # include <iomanip>

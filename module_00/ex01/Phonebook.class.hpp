@@ -6,16 +6,16 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 02:56:19 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/05 02:56:20 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/05 22:34:25 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef PHONEBOOK_CLASS_HPP
+# define PHONEBOOK_CLASS_HPP
 
 # include <iostream>
 # include <iomanip>
-# include "Contact.hpp"
+# include "Contact.class.hpp"
 
 class Phonebook {
 

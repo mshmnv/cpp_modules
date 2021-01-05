@@ -6,12 +6,12 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 02:56:38 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/05 11:34:38 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/05 22:10:45 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Phonebook.hpp"
+#include "Phonebook.class.hpp"
 
 int	main(int argc, char **args) {
 
