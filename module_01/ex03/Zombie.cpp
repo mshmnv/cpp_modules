@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 02:22:43 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/06 21:21:26 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/06 22:03:12 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/06 22:04:21 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
+Zombie::Zombie(std::string name, std::string type) : _name(name), _type(type) {
+}
 
+Zombie::Zombie( void ) {
+}
 
-class Pony {
+Zombie::~Zombie( void ) {
+	std::cout << this->_type << " " << this->_name << " is dead" << std::endl;
+}
 
-public:
-	Pony( void );
-	~Pony( void );
-
-	void				change_color( void );
-	void				celebrate_birthday( void );
-
-private:
-	std::string		_color;
-	int				_age;
-
-};
-
-#endif
+void	Zombie::announce( void ) {
+	std::cout << "<" << this->_name << " (" << this->_type << ")>  ";
+	std::cout << "Braiiiiiiinnnssss..." << std::endl;
+}

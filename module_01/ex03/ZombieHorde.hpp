@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 02:22:43 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/06 21:21:26 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/06 22:05:05 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/06 22:06:52 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
-
-#include <iostream>
-
-
-class Pony {
+class ZombieHorde {
 
 public:
-	Pony( void );
-	~Pony( void );
-
-	void				change_color( void );
-	void				celebrate_birthday( void );
+	ZombieHorde(int nbZombies);
+	~ZombieHorde( void );
 
 private:
-	std::string		_color;
-	int				_age;
 
 };
-
-#endif

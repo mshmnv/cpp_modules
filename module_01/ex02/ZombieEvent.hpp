@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 02:22:43 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/06 21:21:26 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/06 19:50:38 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/06 21:40:40 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#ifndef ZOMBIEEVENT_HPP
+#define ZOMBIEEVENT_HPP
 
-#include <iostream>
+#include "Zombie.hpp"
 
-
-class Pony {
-
+class ZombieEvent {
+	
 public:
-	Pony( void );
-	~Pony( void );
+	ZombieEvent( void );
+	~ZombieEvent( void );
 
-	void				change_color( void );
-	void				celebrate_birthday( void );
+	Zombie* 	newZombie(std::string name);
+	void		setZombieType(std::string type);
+	Zombie*		randomChump( void );
 
 private:
-	std::string		_color;
-	int				_age;
+	std::string	_type;
 
 };
 

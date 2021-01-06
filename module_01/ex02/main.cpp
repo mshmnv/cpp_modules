@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 02:22:43 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/06 21:21:26 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/06 19:50:47 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/06 22:01:23 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#include "Zombie.hpp"
+#include "ZombieEvent.hpp"
 
-#include <iostream>
+int main( void ) {
+	
+	Zombie* firstZombie = new Zombie("Mark", "Sad zombie");
+	firstZombie->announce();
+	delete firstZombie;
 
+	ZombieEvent event;
+	Zombie* secondZombie = event.randomChump();
+	delete secondZombie;
 
-class Pony {
+	event.setZombieType("Funny zombie");
+	Zombie* thirdZombie = event.randomChump();
+	delete thirdZombie;
 
-public:
-	Pony( void );
-	~Pony( void );
-
-	void				change_color( void );
-	void				celebrate_birthday( void );
-
-private:
-	std::string		_color;
-	int				_age;
-
-};
-
-#endif
+	return 0;
+}

@@ -1,34 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 02:22:43 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/06 21:21:26 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/06 22:02:53 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/06 22:03:03 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+int main( void ) {
 
-#include <iostream>
-
-
-class Pony {
-
-public:
-	Pony( void );
-	~Pony( void );
-
-	void				change_color( void );
-	void				celebrate_birthday( void );
-
-private:
-	std::string		_color;
-	int				_age;
-
-};
-
-#endif
+	return 0;
+}
