@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 02:56:14 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/05 22:34:01 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/06 02:17:53 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ Phonebook::~Phonebook( void ) {
 void		Phonebook::add(void) {
 
 	std::string value;
-	 
+	if (this->numContacts == 8) {
+		std::cout << "The Phonebook is full" << std::endl;
+		return ;
+	}	
 	this->numContacts += 1;
 
 	std::cout << "Enter the First Name: ";
