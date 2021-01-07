@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 22:02:53 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/07 17:01:59 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/07 19:14:24 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/07 19:20:17 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-int main( void ) {
-	ZombieHorde zombies(10, "Sad zombie");
-	zombies.announce();
-	return 0;
-}
+#include <iostream>
+
+class Weapon {
+
+public:
+	Weapon();
+	~Weapon();
+
+	const std::string&	getType();
+	void				setType(std::string type);
+
+private:
+	std::string		_type;
+
+};
+
+#endif

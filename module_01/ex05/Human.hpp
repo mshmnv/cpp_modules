@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 22:02:53 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/07 17:01:59 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/07 17:13:22 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/07 19:04:23 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#ifndef HUMAN_HPP
+#define HUMAN_HPP
 
-int main( void ) {
-	ZombieHorde zombies(10, "Sad zombie");
-	zombies.announce();
-	return 0;
-}
+#include "Brain.hpp"
+#include <iostream>
+
+class Human {
+
+public:
+	Human();
+	~Human();
+	std::string		identify();
+	Brain&			getBrain();
+
+private:
+	Brain*			_brain;
+
+};
+
+#endif

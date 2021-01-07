@@ -5,15 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 22:02:53 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/07 17:01:59 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/07 17:08:47 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/07 19:06:46 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#include "Human.hpp"
+#include "Brain.hpp"
 
-int main( void ) {
-	ZombieHorde zombies(10, "Sad zombie");
-	zombies.announce();
-	return 0;
+int main()
+{
+	Human bob;
+	std::cout << bob.identify() << std::endl;
+	std::cout << bob.getBrain().identify() << std::endl;
 }

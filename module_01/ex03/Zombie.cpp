@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 22:03:12 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/06 22:04:21 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/07 17:01:41 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,12 @@ Zombie::~Zombie( void ) {
 void	Zombie::announce( void ) {
 	std::cout << "<" << this->_name << " (" << this->_type << ")>  ";
 	std::cout << "Braiiiiiiinnnssss..." << std::endl;
+}
+
+void	Zombie::setName(std::string name) {
+	this->_name = name;
+}
+
+void	Zombie::setType(std::string type) {
+	this->_type = type;
 }

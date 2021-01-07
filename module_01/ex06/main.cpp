@@ -5,15 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 22:02:53 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/07 17:01:59 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/07 19:12:56 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/07 19:14:11 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-int main( void ) {
-	ZombieHorde zombies(10, "Sad zombie");
-	zombies.announce();
-	return 0;
+
+int main()
+{
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }

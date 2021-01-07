@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 22:02:53 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/07 17:01:59 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/07 17:03:30 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/07 17:08:16 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#include <iostream>
 
-int main( void ) {
-	ZombieHorde zombies(10, "Sad zombie");
-	zombies.announce();
+int	main( void ) {
+	
+	std::string str = "HI THIS IS BRAIN";
+	
+	std::string* strPtr = &str;
+	std::string& strRef = str;
+	
+	std::cout << "POINTER: " << *strPtr << std::endl;
+	std::cout << "REFERENCE:  " << strRef << std::endl;
+
 	return 0;
 }

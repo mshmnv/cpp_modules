@@ -1,14 +1,14 @@
 .PHONY: all clean fclean re
 
-NAME = zombiehorde
+NAME = weapons
 
-SRC = Zombie.cpp ZombieHorde.cpp
+SRC = Weapon.cpp HumanA.cpp HumanB.cpp
 
 SRCO = $(SRC:.cpp=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
-HEADER = Zombie.hpp ZombieHorde.hpp
+HEADER = Weapon.hpp HumanA.hpp HumanB.hpp
 
 all: $(NAME)
 

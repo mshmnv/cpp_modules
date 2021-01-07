@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 22:02:53 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/07 17:01:59 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/07 17:10:59 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/07 19:10:38 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#include "Brain.hpp"
 
-int main( void ) {
-	ZombieHorde zombies(10, "Sad zombie");
-	zombies.announce();
-	return 0;
+Brain::Brain( void ) {
+	this->_iq = 0;
+	this->_size = "medium";
+}
+
+Brain::Brain(int iq, std::string size) : _iq(iq), _size(size) {
+
+}
+
+Brain::~Brain( void ) {
+	std::cout << "Brain is dead" << std::endl;
+}
+
+std::string	Brain::identify( void ) {
+	std::stringstream addr;
+	addr << this;
+	return (addr.str());
 }

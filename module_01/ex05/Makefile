@@ -1,14 +1,14 @@
 .PHONY: all clean fclean re
 
-NAME = zombiehorde
+NAME = brain
 
-SRC = Zombie.cpp ZombieHorde.cpp
+SRC = Brain.cpp Human.cpp
 
 SRCO = $(SRC:.cpp=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
-HEADER = Zombie.hpp ZombieHorde.hpp
+HEADER = Brain.hpp Human.hpp
 
 all: $(NAME)
 

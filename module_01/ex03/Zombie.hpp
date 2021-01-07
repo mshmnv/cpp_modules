@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 22:03:44 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/06 22:04:07 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/07 17:01:46 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ public:
 	~Zombie( void );
 
 	void		announce( void );
+	void		setName(std::string name);
+	void		setType(std::string type);
 
 private:
 	std::string	_type;
