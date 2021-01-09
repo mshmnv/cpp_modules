@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 19:14:24 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/07 19:20:17 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/07 21:57:27 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class Weapon {
 
 public:
-	Weapon();
-	~Weapon();
+	Weapon(std::string type);
+	~Weapon( void );
 
 	const std::string&	getType();
 	void				setType(std::string type);

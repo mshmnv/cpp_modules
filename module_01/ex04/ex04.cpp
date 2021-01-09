@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 17:03:30 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/07 17:08:16 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/08 17:12:04 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main( void ) {
 	std::string& strRef = str;
 	
 	std::cout << "POINTER: " << *strPtr << std::endl;
-	std::cout << "REFERENCE:  " << strRef << std::endl;
+	std::cout << "REFERENCE: " << strRef << std::endl;
 
 	return 0;
 }

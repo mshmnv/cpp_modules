@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 19:50:47 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/08 17:06:37 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/07 21:47:01 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/07 22:29:51 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieEvent.hpp"
+#include "HumanA.hpp"
 
-int main( void ) {
+HumanA::HumanA(std::string name, Weapon& humanWeapon) : _name(name),  _weaponRef(humanWeapon) {
+}
+
+HumanA::~HumanA( void ) {
 	
-	Zombie* firstZombie = new Zombie("Mark", "Sad zombie");
-	firstZombie->announce();
-	delete firstZombie;
+}
 
-	ZombieEvent event;
-	Zombie* secondZombie = event.randomChump();
-	delete secondZombie;
-
-	event.setZombieType("Funny zombie");
-	Zombie* thirdZombie = event.randomChump();
-	delete thirdZombie;
-
-	return 0;
+void	HumanA::attack( void ) const {
+	std::cout << this->_name << " attacks with his " << this->_weaponRef.getType() << std::endl;
 }

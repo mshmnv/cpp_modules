@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 19:50:47 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/08 17:06:37 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/08 23:57:37 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/09 00:11:34 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieEvent.hpp"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-int main( void ) {
-	
-	Zombie* firstZombie = new Zombie("Mark", "Sad zombie");
-	firstZombie->announce();
-	delete firstZombie;
+#include <iostream>
 
-	ZombieEvent event;
-	Zombie* secondZombie = event.randomChump();
-	delete secondZombie;
+class Fixed {
 
-	event.setZombieType("Funny zombie");
-	Zombie* thirdZombie = event.randomChump();
-	delete thirdZombie;
+public:
+	Fixed();
+	Fixed(Fixed const & src);
+	~Fixed();
 
-	return 0;
-}
+	int getRawBits( void ) const;
+
+private:
+	int _rawBits;
+
+};
+
+#endif;

@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 02:22:32 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/06 19:34:21 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/08 16:51:03 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	main( void ) {
 
 	std::cout << std::endl << "PONY ON THE HEAP" << std::endl;
 	ponyOnTheHeap();
-	std::cout << "No Pony is alive now." << std::endl;
+
+	std::cout << std::endl <<"No Pony is alive now." << std::endl;
 	return 0;
 }

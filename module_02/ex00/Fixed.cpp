@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 19:50:47 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/08 17:06:37 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/08 23:58:14 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/09 00:11:25 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieEvent.hpp"
+#include "Fixed.hpp"
 
-int main( void ) {
-	
-	Zombie* firstZombie = new Zombie("Mark", "Sad zombie");
-	firstZombie->announce();
-	delete firstZombie;
+Fixed::Fixed() {
+	std::cout << "Default constructor called" << std::endl;
+}
 
-	ZombieEvent event;
-	Zombie* secondZombie = event.randomChump();
-	delete secondZombie;
+Fixed::Fixed(Fixed const & src) {
+	std::cout << "Default constructor called" << std::endl;
+}
 
-	event.setZombieType("Funny zombie");
-	Zombie* thirdZombie = event.randomChump();
-	delete thirdZombie;
+Fixed::~Fixed() {
+	std::cout << "Destructor called" << std::endl;
+}
 
-	return 0;
+int		Fixed::getRawBits( void ) const {
+	std::cout << "getRawBits member function called" << std::endl;
 }
