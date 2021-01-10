@@ -1,14 +1,14 @@
 .PHONY: all clean fclean re
 
-NAME = fragtrap
+NAME = scavtrap
 
-SRC = FragTrap.cpp
+SRC = FragTrap.cpp  ScavTrap.cpp
 
 SRCO = $(SRC:.cpp=.o)
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-HEADER = FragTrap.hpp
+HEADER = FragTrap.hpp  ScavTrap.hpp
 
 all: $(NAME)
 

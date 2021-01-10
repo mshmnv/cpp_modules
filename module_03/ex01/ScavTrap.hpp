@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 00:05:50 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/10 19:16:53 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/10 19:56:17 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/10 20:34:13 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include <iostream>
 #include <iomanip>
 
-class FragTrap {
-	
+class ScavTrap {
+
 private:
 	std::string	_name;
 	int			_hitPoint;
@@ -30,12 +30,12 @@ private:
 	int			_armorDamageReduction;
 
 public:
-	FragTrap();
-	FragTrap(std::string name);
-	FragTrap(FragTrap const & src);
-	~FragTrap();
+	ScavTrap();
+	ScavTrap(std::string name);
+	ScavTrap(ScavTrap const & src);
+	~ScavTrap();
 
-	FragTrap&	operator=(FragTrap const & src);
+	ScavTrap&	operator=(ScavTrap const & src);
 
 	std::string	getName( void ) const;
 	int			getEnergy( void ) const;
@@ -47,11 +47,10 @@ public:
 	void	meleeAttack(std::string const & target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
-	int		vaulthunter_dot_exe(std::string const & target);
 	
+	void	challengeNewcomer(std::string newComer);
 };
 
-std::ostream&	operator<<(std::ostream& out, FragTrap const & src);
-
+std::ostream&	operator<<(std::ostream& out, ScavTrap const & src);
 
 #endif
