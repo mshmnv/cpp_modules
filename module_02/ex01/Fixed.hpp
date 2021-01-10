@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 23:57:37 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/09 14:33:07 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/09 20:55:14 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,12 @@ class Fixed {
 
 public:
 	Fixed();
-	
 	Fixed(const int i);
 	Fixed(const float f);
-
 	Fixed(Fixed const & src);
 	~Fixed();
 
 	Fixed&	operator=(Fixed const & src);
-
 
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );
@@ -36,8 +33,8 @@ public:
 	int		toInt( void ) const;
 
 private:
-	int _rawBits;
-	static const int bits = 8;
+	int 				_value;
+	static const int	_bits = 8;
 
 };
 

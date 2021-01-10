@@ -2,13 +2,13 @@
 
 NAME = fixed
 
-SRC = Fixed.cpp
+SRC = FragTrap.cpp
 
 SRCO = $(SRC:.cpp=.o)
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-HEADER = Fixed.hpp
+HEADER = FragTrap.hpp
 
 all: $(NAME)
 
