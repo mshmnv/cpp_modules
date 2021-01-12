@@ -6,43 +6,37 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 00:04:59 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 19:39:43 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/12 21:18:42 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
+#include "NinjaTrap.hpp"
+
+
 
 int main ( void ) {
 /*
-**	ScavTrap
+**	NinjaTrap
 */
-	ScavTrap a("A");
-	std::cout << a;
+	NinjaTrap ninja("ninja");
+	ClapTrap clap("claptrap_name");
+	FragTrap frag("fragtrap_name");
+	ScavTrap scav("scavtrap_name");
 
-	a.takeDamage(50);
-	a.beRepaired(15);
-	a.meleeAttack("cat");
-	a.rangedAttack("dog");
-	std::cout << a;
-	
-	a.challengeNewcomer();
-	std::cout << std::endl;
+	std::cout << ninja;
+	ninja.takeDamage(15);
+	ninja.beRepaired(15);
+	std::cout << ninja;
 
-/*
-**	FragTrap
-*/
-	FragTrap b("B");
-	std::cout << b;
+	ninja.ninjaShoebox(ninja);
+	ninja.ninjaShoebox(clap);
+	ninja.ninjaShoebox(frag);
+	ninja.ninjaShoebox(scav);
 
-	b.takeDamage(50);
-	b.beRepaired(15);
-	b.meleeAttack("cat");
-	b.rangedAttack("dog");
-	std::cout << b;
 
-	b.vaulthunter_dot_exe("Target");
-	std::cout << std::endl;
 
 	return 0;
 }

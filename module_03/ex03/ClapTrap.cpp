@@ -1,80 +1,87 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 19:56:03 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 20:04:25 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/12 19:42:16 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/12 20:43:10 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
+
 /*
 ** --------- Constructors and Destructor ---------
 */
-ScavTrap::ScavTrap( void ) {
-	std::cout << "ScavTrap created!" << std::endl;
+
+ClapTrap::ClapTrap( void ) {
+	std::cout << "ClapTrap created!" << std::endl;
 	this->_name = "Noname";
 	this->_hitPoint = 100;
 	this->_maxHitPoint = 100;
-	this->_energyPoints = 50;
-	this->_maxEnergyPoints = 50;
+	this->_energyPoints = 100;
+	this->_maxEnergyPoints = 100;
 	this->_level = 1;
-	this->_meleeAttackDamage = 20;
-	this->_rangeAttackDamage = 15;
-	this->_armorDamageReduction = 3;
+	this->_meleeAttackDamage = 30;
+	this->_rangeAttackDamage = 20;
+	this->_armorDamageReduction = 4;
 }
 
-ScavTrap::ScavTrap( std::string name ) : _name(name) {
-	std::cout << "ScavTrap created!" << std::endl;
-	this->_hitPoint = 100;
+ClapTrap::ClapTrap( std::string name ) {
+	std::cout << "ClapTrap created!" << std::endl;
+	this->_name = name;
+	this->_hitPoint = 1;
 	this->_maxHitPoint = 100;
-	this->_energyPoints = 50;
-	this->_maxEnergyPoints = 50;
+	this->_energyPoints = 1;
+	this->_maxEnergyPoints = 100;
 	this->_level = 1;
-	this->_meleeAttackDamage = 20;
-	this->_rangeAttackDamage = 15;
-	this->_armorDamageReduction = 3;
+	this->_meleeAttackDamage = 30;
+	this->_rangeAttackDamage = 20;
+	this->_armorDamageReduction = 4;
 }
 
-ScavTrap::ScavTrap( ScavTrap const & src ) {
-	std::cout << "ScavTrap created!" << std::endl;
+ClapTrap::ClapTrap(ClapTrap const & src) {
+	std::cout << "ClapTrap created!" << std::endl;
 	*this = src;
 }
 
-ScavTrap::~ScavTrap( void ) {
-	std::cout << "ScavTrap destroyed!" << std::endl;
+
+ClapTrap::~ClapTrap( void ) {
+	std::cout << "ClapTrap destroyed!" << std::endl;
+	
 }
+
 /*
 ** ------------------ Methods ------------------
 */
-void		ScavTrap::setName(std::string name) {
+
+void		ClapTrap::setName(std::string name) {
 	this->_name = name;
 }
 
-std::string	ScavTrap::getName( void ) const {
+std::string	ClapTrap::getName( void ) const {
 	return (this->_name);
 }
 
-int			ScavTrap::getEnergy( void ) const {
+int			ClapTrap::getEnergy( void ) const {
 	return (this->_energyPoints);
 }
 
-int			ScavTrap::getHitPoints( void ) const {
+int			ClapTrap::getHitPoints( void ) const {
 	return (this->_hitPoint);
 }
 
-void	ScavTrap::rangedAttack(std::string const & target) const {
+void	ClapTrap::rangedAttack(std::string const & target) const {
 	std::cout << "< " << this->_name << " > attacks " << target << " at range, causing " << this->_rangeAttackDamage << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::meleeAttack(std::string const & target) {
+void	ClapTrap::meleeAttack(std::string const & target) {
 	std::cout << "< " << this->_name << " > attacks " << target << " at melee, causing " << this->_meleeAttackDamage << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::takeDamage(unsigned int amount) {
+void	ClapTrap::takeDamage(unsigned int amount) {
 	int damage = amount;
 	this->_hitPoint -= amount;
 	if (this->_hitPoint <= 0)
@@ -86,7 +93,7 @@ void	ScavTrap::takeDamage(unsigned int amount) {
 	std::cout << this->_name << " takes " << damage << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::beRepaired(unsigned int amount) {
+void	ClapTrap::beRepaired(unsigned int amount) {
 	int heal = amount;
 	this->_hitPoint += amount;
 	if (this->_hitPoint > this->_maxHitPoint)
@@ -97,22 +104,11 @@ void	ScavTrap::beRepaired(unsigned int amount) {
 	std::cout << "< " << this->_name << " >" << " is healed on " << heal << std::endl;
 }
 
-void	ScavTrap::challengeNewcomer( void ) {
-	if (this->_energyPoints <= 25)
-	{
-		std::cout << "< " << this->_name << " >" << " doesn't have enough energy to get a challenge." << std::endl;
-		return ;
-	}
-	_energyPoints -= 25;
-	srand(time(0));
-	std::string challenges[5] = {"to buy a chocolate", "to cry", "to eat a stone", "to run away", "to dance"};
-	std::cout << "< " << this->_name << " > gets challenge: " << challenges[rand() % 5] << std::endl;
-}
-
 /*
 ** ------------------ Overloads ------------------
 */
-ScavTrap&	ScavTrap::operator=(ScavTrap const & src) {
+
+ClapTrap&	ClapTrap::operator=(ClapTrap const & src) {
 	this->_name = src._name;
 	this->_level = src._level;
 	this->_energyPoints = src._energyPoints;
@@ -125,7 +121,8 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const & src) {
 	return (*this);
 }
 
-std::ostream&	operator<<(std::ostream& out, ScavTrap const & src) {
+
+std::ostream&	operator<<(std::ostream& out, ClapTrap const & src) {
 	out << "----------------------------------" << std::endl;
 	out << "|" << std::setw(10) << "NAME" << "|";
 	out << std::setw(10) << "ENERGY";

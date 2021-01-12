@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 19:56:17 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 19:31:56 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/12 20:03:50 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,19 @@
 #define SCAVTRAP_HPP
 
 #include <iostream>
-#include <iomanip>
+#include "ClapTrap.hpp"
 
-class ScavTrap {
+class ScavTrap : public ClapTrap {
 
 private:
-	std::string	_name;
-	int			_hitPoint;
-	int			_maxHitPoint;
-	int			_energyPoints;
-	int			_maxEnergyPoints;
-	int			_level;
-	int			_meleeAttackDamage;
-	int			_rangeAttackDamage;
-	int			_armorDamageReduction;
 
 public:
 	ScavTrap();
 	ScavTrap(std::string name);
 	ScavTrap(ScavTrap const & src);
 	~ScavTrap();
-
-	ScavTrap&	operator=(ScavTrap const & src);
-
-	std::string	getName( void ) const;
-	int			getEnergy( void ) const;
-	int			getHitPoints( void ) const;
-
-	void	setName(std::string name);
-
-	void	rangedAttack(std::string const & target) const;
-	void	meleeAttack(std::string const & target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
 	
 	void	challengeNewcomer( void );
 };
-
-std::ostream&	operator<<(std::ostream& out, ScavTrap const & src);
 
 #endif

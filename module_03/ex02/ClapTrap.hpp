@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 19:56:17 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 19:31:56 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/12 19:40:22 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/12 20:33:26 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 #include <iomanip>
 
-class ScavTrap {
+class ClapTrap {
 
 private:
+
+protected:
 	std::string	_name;
 	int			_hitPoint;
 	int			_maxHitPoint;
@@ -30,27 +32,24 @@ private:
 	int			_armorDamageReduction;
 
 public:
-	ScavTrap();
-	ScavTrap(std::string name);
-	ScavTrap(ScavTrap const & src);
-	~ScavTrap();
+	ClapTrap( void );
+	ClapTrap(std::string name);
+	ClapTrap(ClapTrap const & other);
+	~ClapTrap( void );
 
-	ScavTrap&	operator=(ScavTrap const & src);
-
+	ClapTrap&	operator=(ClapTrap const & src);
 	std::string	getName( void ) const;
 	int			getEnergy( void ) const;
 	int			getHitPoints( void ) const;
-
-	void	setName(std::string name);
-
-	void	rangedAttack(std::string const & target) const;
-	void	meleeAttack(std::string const & target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	void		setName(std::string name);
 	
-	void	challengeNewcomer( void );
+	void		rangedAttack(std::string const & target) const;
+	void		meleeAttack(std::string const & target);
+	void		takeDamage(unsigned int amount);
+	void		beRepaired(unsigned int amount);
+
 };
 
-std::ostream&	operator<<(std::ostream& out, ScavTrap const & src);
+std::ostream&	operator<<(std::ostream& out, ClapTrap const & src);
 
 #endif
