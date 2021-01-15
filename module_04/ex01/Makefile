@@ -2,13 +2,13 @@
 
 NAME = sorcerer
 
-SRC = AWeapon.cpp PlasmaRifle.cpp PowerFist.cpp
+SRC = AWeapon.cpp PlasmaRifle.cpp PowerFist.cpp Enemy.cpp SuperMutant.cpp RadScorpion.cpp Character.cpp
 
 SRCO = $(SRC:.cpp=.o)
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-HEADER = AWeapon.hpp PlasmaRifle.hpp PowerFist.hpp
+HEADER = AWeapon.hpp PlasmaRifle.hpp PowerFist.hpp Enemy.hpp SuperMutant.hpp RadScorpion.hpp Character.hpp
 
 all: $(NAME)
 
