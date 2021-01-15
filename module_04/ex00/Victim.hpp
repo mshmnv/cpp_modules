@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   Victim.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 20:36:49 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/14 12:37:48 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/14 21:32:25 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/14 22:34:48 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-#define NINJATRAP_HPP
+#ifndef VICTIM_HPP
+#define VICTIM_HPP
 
 #include <iostream>
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
 
-class NinjaTrap : virtual public ClapTrap {
+class Victim {
 
-private:
+protected:
+	std::string	_name;
 
 public:
-	NinjaTrap( void );
-	NinjaTrap( std::string name );
-	NinjaTrap( NinjaTrap const & src);
-	~NinjaTrap( void );
+	Victim(std::string name);
+	Victim(Victim const & src);
+	~Victim( void );
 
-	void	ninjaShoebox(ClapTrap & clap);
-	void	ninjaShoebox(FragTrap & frag);
-	void	ninjaShoebox(ScavTrap & scav);
-	void	ninjaShoebox(NinjaTrap & ninja);
+	Victim & operator=(Victim const & src);
+
+	std::string		getName( void ) const;
+	virtual void	getPolymorphed(void) const;
 };
+
+std::ostream & operator<<(std::ostream & out, Victim const & object);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 19:42:16 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 20:43:10 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/14 12:10:38 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 /*
 ** --------- Constructors and Destructor ---------
 */
-
 ClapTrap::ClapTrap( void ) {
 	std::cout << "ClapTrap created!" << std::endl;
 	this->_name = "Noname";
@@ -56,7 +55,6 @@ ClapTrap::~ClapTrap( void ) {
 /*
 ** ------------------ Methods ------------------
 */
-
 void		ClapTrap::setName(std::string name) {
 	this->_name = name;
 }
@@ -77,7 +75,7 @@ void	ClapTrap::rangedAttack(std::string const & target) const {
 	std::cout << "< " << this->_name << " > attacks " << target << " at range, causing " << this->_rangeAttackDamage << " points of damage!" << std::endl;
 }
 
-void	ClapTrap::meleeAttack(std::string const & target) {
+void	ClapTrap::meleeAttack(std::string const & target) const {
 	std::cout << "< " << this->_name << " > attacks " << target << " at melee, causing " << this->_meleeAttackDamage << " points of damage!" << std::endl;
 }
 
@@ -107,7 +105,6 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 /*
 ** ------------------ Overloads ------------------
 */
-
 ClapTrap&	ClapTrap::operator=(ClapTrap const & src) {
 	this->_name = src._name;
 	this->_level = src._level;

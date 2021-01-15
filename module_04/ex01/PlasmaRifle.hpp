@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 20:36:49 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/14 12:11:08 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/15 12:11:20 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/15 12:27:11 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-#define NINJATRAP_HPP
+#ifndef PLASMARIFLE_HPP
+#define PLASMARIFLE_HPP
 
-#include <iostream>
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#include "AWeapon.hpp"
 
-class NinjaTrap : public ClapTrap {
+class PlasmaRifle : public AWeapon {
 
 private:
 
 public:
-	NinjaTrap( void );
-	NinjaTrap( std::string name );
-	NinjaTrap( NinjaTrap const & src);
-	~NinjaTrap( void );
+	PlasmaRifle( void );
+	PlasmaRifle(PlasmaRifle const & src);
+	~PlasmaRifle();
 
-	void	ninjaShoebox(ClapTrap & clap);
-	void	ninjaShoebox(FragTrap & frag);
-	void	ninjaShoebox(ScavTrap & scav);
-	void	ninjaShoebox(NinjaTrap & ninja);
-
+	void attack() const;
 };
 
 #endif

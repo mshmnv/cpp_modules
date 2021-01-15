@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   PlasmaRifle.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 00:05:50 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/14 12:37:24 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/15 12:14:05 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/15 12:20:52 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#include "PlasmaRifle.hpp"
 
-#include <iostream>
-#include "ClapTrap.hpp"
+PlasmaRifle::PlasmaRifle( void ) : AWeapon("Plasma Rifle", 5, 21) {
 
+}
 
-class FragTrap : virtual public ClapTrap {
+PlasmaRifle::PlasmaRifle(PlasmaRifle const & src) : AWeapon(src) {
 	
-private:
+}
 
-public:
-	FragTrap();
-	FragTrap(std::string name);
-	FragTrap(FragTrap const & src);
-	~FragTrap();
+PlasmaRifle::~PlasmaRifle() {
 	
-	void	vaulthunter_dot_exe(std::string const & target);
-	
-};
+}
 
-
-#endif
+void	PlasmaRifle::attack() const {
+	std::cout << "* piouuu piouuu piouuu *" << std::endl;
+}

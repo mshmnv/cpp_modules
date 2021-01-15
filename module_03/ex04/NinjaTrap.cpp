@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 20:37:41 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 21:14:00 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/14 12:37:34 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ NinjaTrap::~NinjaTrap( void ) {
 /*
 ** ------------------ Methods ------------------
 */
-
 void	NinjaTrap::ninjaShoebox(ClapTrap & clap) {
 	if (this->_energyPoints <= 25)
 	{
@@ -63,7 +62,6 @@ void	NinjaTrap::ninjaShoebox(ClapTrap & clap) {
 	}
 	this->_energyPoints -= 25;
 	std::cout << "< " << this->_name << " >" << " attacks " << clap.getName() << std::endl;
-
 }
 
 void	NinjaTrap::ninjaShoebox(FragTrap & frag) {
@@ -94,6 +92,4 @@ void	NinjaTrap::ninjaShoebox(NinjaTrap & ninja) {
 	}
 	this->_energyPoints -= 25;
 	std::cout << "< " << this->_name << " >" << " attacks " << ninja.getName() << std::endl;
-	
-
 }

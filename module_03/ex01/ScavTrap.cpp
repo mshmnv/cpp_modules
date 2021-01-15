@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 19:56:03 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 20:04:25 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/14 12:08:00 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ ScavTrap::ScavTrap( ScavTrap const & src ) {
 ScavTrap::~ScavTrap( void ) {
 	std::cout << "ScavTrap destroyed!" << std::endl;
 }
+
 /*
 ** ------------------ Methods ------------------
 */
@@ -70,7 +71,7 @@ void	ScavTrap::rangedAttack(std::string const & target) const {
 	std::cout << "< " << this->_name << " > attacks " << target << " at range, causing " << this->_rangeAttackDamage << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::meleeAttack(std::string const & target) {
+void	ScavTrap::meleeAttack(std::string const & target) const {
 	std::cout << "< " << this->_name << " > attacks " << target << " at melee, causing " << this->_meleeAttackDamage << " points of damage!" << std::endl;
 }
 

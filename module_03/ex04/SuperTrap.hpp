@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 20:28:35 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 21:23:15 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/14 12:16:45 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@
 #include "NinjaTrap.hpp"
 #include <iostream>
 
-class SuperTrap : public FragTrap, public NinjaTrap {
-
-private:
+class SuperTrap : public NinjaTrap, public FragTrap {
 
 protected:
 
@@ -29,6 +27,9 @@ public:
 	SuperTrap( SuperTrap const & src );
 
 	~SuperTrap( void );
+
+	void		rangedAttack(std::string const & target) const;
+	void		meleeAttack(std::string const & target) const;
 
 };
 

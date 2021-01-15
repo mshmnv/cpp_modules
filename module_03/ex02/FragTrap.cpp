@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 00:06:18 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 21:10:57 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/13 19:58:51 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ FragTrap::FragTrap() {
 	this->_level = 1;
 	this->_meleeAttackDamage = 30;
 	this->_rangeAttackDamage = 20;
-	this->_armorDamageReduction = 4;
+	this->_armorDamageReduction = 5;
 }
 
 FragTrap::FragTrap(std::string name) {
@@ -39,7 +39,7 @@ FragTrap::FragTrap(std::string name) {
 	this->_level = 1;
 	this->_meleeAttackDamage = 30;
 	this->_rangeAttackDamage = 20;
-	this->_armorDamageReduction = 4;
+	this->_armorDamageReduction = 5;
 }
 
 FragTrap::FragTrap(FragTrap const & src) {

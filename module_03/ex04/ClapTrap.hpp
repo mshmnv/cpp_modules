@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 19:40:22 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 20:33:26 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/14 12:30:17 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #include <iomanip>
 
 class ClapTrap {
-
-private:
 
 protected:
 	std::string	_name;
@@ -38,13 +36,15 @@ public:
 	~ClapTrap( void );
 
 	ClapTrap&	operator=(ClapTrap const & src);
+
 	std::string	getName( void ) const;
 	int			getEnergy( void ) const;
 	int			getHitPoints( void ) const;
-	void		setName(std::string name);
 	
+	void		setName(std::string name);
+	void		getInfo();
 	void		rangedAttack(std::string const & target) const;
-	void		meleeAttack(std::string const & target);
+	void		meleeAttack(std::string const & target) const ;
 	void		takeDamage(unsigned int amount);
 	void		beRepaired(unsigned int amount);
 

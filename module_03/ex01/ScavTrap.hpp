@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 19:56:17 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 19:31:56 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/14 12:08:09 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ public:
 	void	setName(std::string name);
 
 	void	rangedAttack(std::string const & target) const;
-	void	meleeAttack(std::string const & target);
+	void	meleeAttack(std::string const & target) const;
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 	

@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 19:42:16 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 20:43:10 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/14 12:33:18 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 /*
 ** --------- Constructors and Destructor ---------
 */
-
 ClapTrap::ClapTrap( void ) {
 	std::cout << "ClapTrap created!" << std::endl;
 	this->_name = "Noname";
@@ -24,17 +23,17 @@ ClapTrap::ClapTrap( void ) {
 	this->_energyPoints = 100;
 	this->_maxEnergyPoints = 100;
 	this->_level = 1;
-	this->_meleeAttackDamage = 30;
-	this->_rangeAttackDamage = 20;
-	this->_armorDamageReduction = 4;
+	this->_meleeAttackDamage = 100;
+	this->_rangeAttackDamage = 100;
+	this->_armorDamageReduction = 100;
 }
 
 ClapTrap::ClapTrap( std::string name ) {
 	std::cout << "ClapTrap created!" << std::endl;
 	this->_name = name;
-	this->_hitPoint = 1;
+	this->_hitPoint = 100;
 	this->_maxHitPoint = 100;
-	this->_energyPoints = 1;
+	this->_energyPoints = 100;
 	this->_maxEnergyPoints = 100;
 	this->_level = 1;
 	this->_meleeAttackDamage = 30;
@@ -47,15 +46,24 @@ ClapTrap::ClapTrap(ClapTrap const & src) {
 	*this = src;
 }
 
-
 ClapTrap::~ClapTrap( void ) {
 	std::cout << "ClapTrap destroyed!" << std::endl;
-	
 }
 
 /*
 ** ------------------ Methods ------------------
 */
+void		ClapTrap::getInfo() {
+	std::cout << "NAME: " << this->_name << std::endl;
+	std::cout << "LEVEL: " << this->_level << std::endl;
+	std::cout << "HIT POINTS: " << this->_hitPoint << std::endl;
+	std::cout << "MAX HIT POINTS: " << this->_maxHitPoint << std::endl;
+	std::cout << "ENERGY POINTS: " << this->_energyPoints << std::endl;
+	std::cout << "MAX ENERGY POINTS: " << this->_maxEnergyPoints << std::endl;
+	std::cout << "MELEE DAMAGE: " << this->_meleeAttackDamage << std::endl;
+	std::cout << "RANGED DAMAGE: " << this->_rangeAttackDamage << std::endl;
+	std::cout << "ARMOR REDUCTION: " << this->_armorDamageReduction << std::endl;
+}
 
 void		ClapTrap::setName(std::string name) {
 	this->_name = name;
@@ -77,7 +85,7 @@ void	ClapTrap::rangedAttack(std::string const & target) const {
 	std::cout << "< " << this->_name << " > attacks " << target << " at range, causing " << this->_rangeAttackDamage << " points of damage!" << std::endl;
 }
 
-void	ClapTrap::meleeAttack(std::string const & target) {
+void	ClapTrap::meleeAttack(std::string const & target) const {
 	std::cout << "< " << this->_name << " > attacks " << target << " at melee, causing " << this->_meleeAttackDamage << " points of damage!" << std::endl;
 }
 
@@ -107,7 +115,6 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 /*
 ** ------------------ Overloads ------------------
 */
-
 ClapTrap&	ClapTrap::operator=(ClapTrap const & src) {
 	this->_name = src._name;
 	this->_level = src._level;
@@ -120,7 +127,6 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const & src) {
 	this->_armorDamageReduction = src._armorDamageReduction;
 	return (*this);
 }
-
 
 std::ostream&	operator<<(std::ostream& out, ClapTrap const & src) {
 	out << "----------------------------------" << std::endl;

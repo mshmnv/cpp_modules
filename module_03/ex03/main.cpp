@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 00:04:59 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/12 21:18:42 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/13 20:02:31 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@
 
 
 int main ( void ) {
-/*
-**	NinjaTrap
-*/
+
 	NinjaTrap ninja("ninja");
 	ClapTrap clap("claptrap_name");
 	FragTrap frag("fragtrap_name");

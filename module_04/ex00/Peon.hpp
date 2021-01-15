@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 20:36:49 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/14 12:37:48 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/14 21:51:01 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/14 22:39:12 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-#define NINJATRAP_HPP
+#ifndef PEON_HPP
+#define PEON_HPP
 
 #include <iostream>
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#include "Victim.hpp"
 
-class NinjaTrap : virtual public ClapTrap {
-
-private:
+class Peon : public Victim {
 
 public:
-	NinjaTrap( void );
-	NinjaTrap( std::string name );
-	NinjaTrap( NinjaTrap const & src);
-	~NinjaTrap( void );
+	Peon(std::string name);
+	Peon(Peon const & src);
+	~Peon( void );
 
-	void	ninjaShoebox(ClapTrap & clap);
-	void	ninjaShoebox(FragTrap & frag);
-	void	ninjaShoebox(ScavTrap & scav);
-	void	ninjaShoebox(NinjaTrap & ninja);
+	void getPolymorphed( void ) const;
 };
 
 #endif

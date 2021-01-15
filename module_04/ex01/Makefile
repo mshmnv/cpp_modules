@@ -1,14 +1,14 @@
 .PHONY: all clean fclean re
 
-NAME = supertrap
+NAME = sorcerer
 
-SRC = FragTrap.cpp  ScavTrap.cpp ClapTrap.cpp NinjaTrap.cpp SuperTrap.cpp
+SRC = AWeapon.cpp PlasmaRifle.cpp PowerFist.cpp
 
 SRCO = $(SRC:.cpp=.o)
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-HEADER = FragTrap.hpp  ScavTrap.hpp ClapTrap.hpp NinjaTrap.hpp SuperTrap.hpp
+HEADER = AWeapon.hpp PlasmaRifle.hpp PowerFist.hpp
 
 all: $(NAME)
 

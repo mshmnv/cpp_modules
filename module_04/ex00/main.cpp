@@ -5,41 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 00:04:59 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/13 20:02:05 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/14 20:25:57 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/14 23:26:41 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+#include "Sorcerer.hpp"
+#include "Victim.hpp"
+#include "Peon.hpp"
 
+int main() {
 
-int main ( void ) {
-/*
-**	ScavTrap
-*/
-	ScavTrap a("A");
-	std::cout << a;
-	a.takeDamage(50);
-	a.beRepaired(15);
-	a.meleeAttack("cat");
-	a.rangedAttack("dog");
-	std::cout << a;
-	a.challengeNewcomer();
-	std::cout << std::endl;
-/*
-**	FragTrap
-*/
-	FragTrap b("B");
-	std::cout << b;
-	b.takeDamage(50);
-	b.beRepaired(15);
-	b.meleeAttack("cat");
-	b.rangedAttack("dog");
-	std::cout << b;
-	b.vaulthunter_dot_exe("Target");
-	std::cout << std::endl;
+	Sorcerer robert("Robert", "the Magnificent");
+	Victim jim("Jimmy");
+	Peon joe("Joe");
 
-	return 0;
+	std::cout << robert << jim << joe;
+
+	robert.polymorph(jim);
+	robert.polymorph(joe);
+
+	return 0; 
 }

@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   Sorcerer.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 20:36:49 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/14 12:37:48 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/14 14:15:25 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/14 22:29:34 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-#define NINJATRAP_HPP
+#ifndef SORCERER_HPP
+#define SORCERER_HPP
 
 #include <iostream>
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#include "Victim.hpp"
 
-class NinjaTrap : virtual public ClapTrap {
+class Sorcerer {
 
 private:
+	std::string	_name;
+	std::string	_title;
 
 public:
-	NinjaTrap( void );
-	NinjaTrap( std::string name );
-	NinjaTrap( NinjaTrap const & src);
-	~NinjaTrap( void );
+	Sorcerer(std::string name, std::string title);
+	Sorcerer( Sorcerer const & src);
+	~Sorcerer();
 
-	void	ninjaShoebox(ClapTrap & clap);
-	void	ninjaShoebox(FragTrap & frag);
-	void	ninjaShoebox(ScavTrap & scav);
-	void	ninjaShoebox(NinjaTrap & ninja);
+	Sorcerer & operator=(Sorcerer const & src);
+
+	std::string getName( void ) const;
+	std::string getTitle( void ) const;
+
+	void polymorph(Victim const & victim) const;
 };
+
+std::ostream & operator<<(std::ostream & out, Sorcerer const & inst);
 
 #endif

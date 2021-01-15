@@ -6,12 +6,15 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 00:06:18 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/10 20:01:07 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/14 12:06:17 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+/*
+** --------- Constructors and Destructor ---------
+*/
 FragTrap::FragTrap() {
 	std::cout << "Hocus pocus!" << std::endl;
 	this->_name = "Noname";
@@ -42,11 +45,13 @@ FragTrap::FragTrap(FragTrap const & src) {
 	*this = src;
 }
 
-
 FragTrap::~FragTrap() {
 	std::cout << "Yessss, look into my eyes. You're getting sleepy. You're getting... zzzzzz... Zzzzzz..." << std::endl;	
 }
 
+/*
+** ------------------ Methods ------------------
+*/
 void		FragTrap::setName(std::string name) {
 	this->_name = name;
 }
@@ -63,39 +68,11 @@ int			FragTrap::getHitPoints( void ) const {
 	return (this->_hitPoint);
 }
 
-
-FragTrap&	FragTrap::operator=(FragTrap const & src) {
-	this->_name = src._name;
-	this->_level = src._level;
-	this->_energyPoints = src._energyPoints;
-	this->_maxEnergyPoints = src._maxEnergyPoints;
-	this->_hitPoint = src._hitPoint;
-	this->_maxHitPoint = src._maxHitPoint;
-	this->_meleeAttackDamage = src._meleeAttackDamage;
-	this->_rangeAttackDamage = src._rangeAttackDamage;
-	this->_armorDamageReduction = src._armorDamageReduction;
-	return (*this);
-}
-
-std::ostream&	operator<<(std::ostream& out, FragTrap const & src) {
-	out << "----------------------------------" << std::endl;
-	out << "|" << std::setw(10) << "NAME" << "|";
-	out << std::setw(10) << "ENERGY";
-	out << "|" << std::setw(10) << "POINTS" << "|" << std::endl;
-	out << "----------------------------------" << std::endl;
-	out << "|" << std::setw(10) << src.getName() << "|";
-	out << std::setw(10) << src.getEnergy();
-	out << "|" << std::setw(10) << src.getHitPoints() << "|" << std::endl;
-	out << "----------------------------------" << std::endl;
-	return (out);
-}
-
-
 void	FragTrap::rangedAttack(std::string const & target) const {
 	std::cout << "< " << this->_name << " > attacks " << target << " at range, causing " << this->_rangeAttackDamage << " points of damage!" << std::endl;
 }
 
-void	FragTrap::meleeAttack(std::string const & target) {
+void	FragTrap::meleeAttack(std::string const & target) const {
 	std::cout << "< " << this->_name << " > attacks " << target << " at melee, causing " << this->_meleeAttackDamage << " points of damage!" << std::endl;
 }
 
@@ -135,4 +112,33 @@ int		FragTrap::vaulthunter_dot_exe(std::string const & target) {
 		return (damagePoints);
  	}
 	 return 0;
+}
+
+/*
+** ------------------ Overloads ------------------
+*/
+FragTrap&	FragTrap::operator=(FragTrap const & src) {
+	this->_name = src._name;
+	this->_level = src._level;
+	this->_energyPoints = src._energyPoints;
+	this->_maxEnergyPoints = src._maxEnergyPoints;
+	this->_hitPoint = src._hitPoint;
+	this->_maxHitPoint = src._maxHitPoint;
+	this->_meleeAttackDamage = src._meleeAttackDamage;
+	this->_rangeAttackDamage = src._rangeAttackDamage;
+	this->_armorDamageReduction = src._armorDamageReduction;
+	return (*this);
+}
+
+std::ostream&	operator<<(std::ostream& out, FragTrap const & src) {
+	out << "----------------------------------" << std::endl;
+	out << "|" << std::setw(10) << "NAME" << "|";
+	out << std::setw(10) << "ENERGY";
+	out << "|" << std::setw(10) << "POINTS" << "|" << std::endl;
+	out << "----------------------------------" << std::endl;
+	out << "|" << std::setw(10) << src.getName() << "|";
+	out << std::setw(10) << src.getEnergy();
+	out << "|" << std::setw(10) << src.getHitPoints() << "|" << std::endl;
+	out << "----------------------------------" << std::endl;
+	return (out);
 }
