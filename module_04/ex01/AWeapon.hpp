@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 11:51:37 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/15 12:10:35 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/19 01:10:48 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ protected:
 public:
 	AWeapon(std::string const & name, int apcost, int damage);
 	AWeapon(AWeapon const & src);
-	~AWeapon();
+	virtual ~AWeapon();
 
 	AWeapon &		operator=(AWeapon const & src);
 

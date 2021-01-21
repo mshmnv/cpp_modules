@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 15:08:58 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/15 15:18:38 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/15 17:55:16 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,4 @@ void	SuperMutant::takeDamage(int amount) {
 		damage = this->_hp + amount;
 		this->_hp = 0;
 	}
-	std::cout << "Supeer Mutant takes " << damage << " points of damage!" << std::endl;
 }

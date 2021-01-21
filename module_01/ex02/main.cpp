@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 19:50:47 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/08 17:06:37 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/16 02:50:41 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int main( void ) {
 	event.setZombieType("Funny zombie");
 	Zombie* thirdZombie = event.randomChump();
 	delete thirdZombie;
-
+	getchar();
 	return 0;
 }

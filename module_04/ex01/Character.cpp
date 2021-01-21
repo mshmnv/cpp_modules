@@ -6,13 +6,13 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 15:35:16 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/15 15:52:02 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/18 17:39:57 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(std::string const & name) : _name(name), _actionPoints(40) {
+Character::Character(std::string const & name) : _name(name), _actionPoints(40), _weapon(NULL) {
 	
 }
 Character::Character(Character const & src) {
@@ -29,12 +29,29 @@ void		Character::recoverAP() {
 	else if (this->_actionPoints > 30)
 		this->_actionPoints = 40;
 }
-void		Character::equip(AWeapon*) {
-	
+void		Character::equip(AWeapon* weapon) {
+	this->_weapon = weapon;
 }
 
-void		Character::attack(Enemy*) {
-	
+void		Character::attack(Enemy* enemy) {
+	if (!enemy)
+		return ;
+	if (_weapon == NULL)
+	{
+		std::cout << "Character has no Weapon to attack" << std::endl;
+		return ;
+	}
+	if (_actionPoints <= _weapon->getAPCost())
+	{
+		std::cout << "Character has no Action Points to attack" << std::endl;
+		return ;
+	}
+	std::cout << this->_name <<" attacks " << enemy->getType() << " with a "<< this->_weapon->getName() << std::endl;
+	_weapon->attack();
+	enemy->takeDamage(_weapon->getDamage());
+	this->_actionPoints -= _weapon->getAPCost();
+	if (enemy->getHP() == 0)
+		delete enemy;
 }
 
 std::string Character::getName() const {
@@ -43,6 +60,13 @@ std::string Character::getName() const {
 
 int			Character::getAP() const {
 	return (this->_actionPoints);
+}
+
+std::string	Character::getWeaponName() const {
+	if (this->_weapon == NULL)
+		return ("No Weapon");
+	else
+		return (this->_weapon->getName());
 }
 
 /*
@@ -56,12 +80,9 @@ Character &		Character::operator=(Character const & src) {
 }
 
 std::ostream&	operator<<(std::ostream& out, Character const & src) {
-	out << "----------------------------------" << std::endl;
-	out << "|" << std::setw(15) << "NAME" << "|";
-	out << std::setw(15) << "AP" << "|" << std::endl;
-	out << "----------------------------------" << std::endl;
-	out << "|" << std::setw(15) << src.getName() << "|";
-	out << std::setw(15) << src.getAP() << "|" << std::endl;
-	out << "----------------------------------" << std::endl;
+	if (src.getWeaponName() == "No Weapon")
+		out << src.getName() << " has " << src.getAP() << " AP and is unarmed" << std::endl;
+	else
+		out << src.getName() << " has " << src.getAP() << " AP and wields a " << src.getWeaponName() << std::endl;
 	return (out);
 }

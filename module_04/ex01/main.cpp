@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 12:06:54 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/15 15:50:00 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/18 17:47:46 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,75 @@
 #include "Character.hpp"
 
 int main( void ) {
-/*
-**	AWeapon
-*/
-	PlasmaRifle rifle;
-	rifle.attack();
-	std::cout << rifle;
 
-	PowerFist fist;
-	fist.attack();
-	std::cout << fist;
+	std::cout << std::endl;
 
-/*
-**	Enemy
-*/
-
-	SuperMutant supermutant;
-	supermutant.takeDamage(13);
-	std::cout << supermutant;
-
-	RadScorpion scorpion;
-	scorpion.takeDamage(10);
-	std::cout << scorpion;
+ 	Character* me = new Character("me");
 	
-/*
-**	Character
-*/
-	Character character("Character");
-	std::cout << character;
+    std::cout << *me;
 
+	Enemy* scorp = new RadScorpion();
+	Enemy* mutant = new SuperMutant();
+
+	AWeapon* pr = new PlasmaRifle();
+	AWeapon* pf = new PowerFist();
+
+	me->equip(pr);
+	std::cout << *me;
+	me->equip(pf);
+
+	me->attack(scorp);
+	std::cout << *me;
+	me->equip(pr);
+	std::cout << *me;
+	me->attack(scorp);
+	std::cout << *me;
+	me->attack(scorp);
+	std::cout << *me;
+
+	std::cout << std::endl;
+
+	me->attack(mutant);
+	std::cout << *me;
+	me->equip(pr);
+	std::cout << *me;
+	me->attack(mutant);
+	std::cout << *me;
+	me->attack(mutant);
+	me->equip(pf);
+	std::cout << *me;
+	me->attack(mutant);
+	
+	std::cout << std::endl;
+/*
+** recovery
+*/
+	me->recoverAP();
+	me->recoverAP();
+	me->recoverAP();
+	std::cout << *me;
+	
+	std::cout << std::endl;
+
+	me->attack(mutant);
+	std::cout << *me;
+	me->attack(mutant);
+	std::cout << *me;
+	me->attack(mutant);
+	std::cout << *me;
+
+	std::cout << std::endl;
+/*
+** some other enemies
+*/
+	me->recoverAP();
+
+	Enemy* tree = new Enemy(100, "tree");
+	me->attack(tree);
+
+	delete pr;
+	delete pf;
+	delete me;
+	
 	return 0;
 }

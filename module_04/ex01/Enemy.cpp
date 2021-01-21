@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 14:52:52 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/15 15:31:36 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/15 17:52:07 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,7 @@ void	Enemy::takeDamage(int amount) {
 		damage = this->_hp + amount;
 		this->_hp = 0;
 	}
-	std::cout << this->_type << " takes " << damage << " points of damage!" << std::endl;
 }
-
 
 /*
 ** ------------------ Overloads ------------------

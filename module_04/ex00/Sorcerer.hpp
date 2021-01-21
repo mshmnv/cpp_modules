@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 14:15:25 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/14 22:29:34 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/18 17:16:09 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class Sorcerer {
 
 private:
+	Sorcerer();
 	std::string	_name;
 	std::string	_title;
 

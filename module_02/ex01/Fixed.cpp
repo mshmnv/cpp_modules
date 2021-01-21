@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 23:58:14 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/09 21:03:03 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/21 01:15:43 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ Fixed::Fixed(const int i) {
 Fixed::Fixed(const float f) {
 	std::cout << "Float constructor called" << std::endl;
 	this->_value = roundf(f * (1 << this->_bits));
-	
 }
 
 Fixed::~Fixed() {

@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 15:28:03 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/15 15:30:52 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/15 17:51:03 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@ RadScorpion::RadScorpion(RadScorpion const & src) : Enemy(src) {
 
 RadScorpion::~RadScorpion() {
 	std::cout << "* SPROTCH *" << std::endl;
-	
 }

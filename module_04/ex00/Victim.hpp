@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 21:32:25 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/14 22:34:48 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/18 17:16:32 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,16 @@
 
 class Victim {
 
+private:
+	Victim();
+
 protected:
 	std::string	_name;
 
 public:
 	Victim(std::string name);
 	Victim(Victim const & src);
-	~Victim( void );
+	virtual ~Victim( void );
 
 	Victim & operator=(Victim const & src);
 

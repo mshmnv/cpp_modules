@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 15:35:06 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/15 15:50:47 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/18 17:21:58 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@
 class Character {
 
 private:
+	Character();
 	std::string _name;
 	int			_actionPoints;
+	AWeapon*	_weapon;
 
 public:
 	Character(std::string const & name);
@@ -32,10 +34,11 @@ public:
 	
 	std::string	getName() const;
 	int 		getAP() const;
+	std::string	getWeaponName() const;
 
 	void		recoverAP();
-	void		equip(AWeapon*);
-	void		attack(Enemy*);
+	void		equip(AWeapon* weapon);
+	void		attack(Enemy* enemy);
 
 };
 

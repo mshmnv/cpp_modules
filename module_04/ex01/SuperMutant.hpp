@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 15:09:19 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/15 15:16:52 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/18 17:28:12 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 public:
 	SuperMutant();
 	SuperMutant(SuperMutant const & src);
-	~SuperMutant();
+	virtual ~SuperMutant();
 
 	void	takeDamage(int amount);
 

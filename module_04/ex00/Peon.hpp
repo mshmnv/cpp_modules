@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 21:51:01 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/14 22:39:12 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/18 17:17:09 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@
 
 class Peon : public Victim {
 
+private:
+	Peon();
+
 public:
 	Peon(std::string name);
 	Peon(Peon const & src);
-	~Peon( void );
+	virtual ~Peon( void );
 
 	void getPolymorphed( void ) const;
 };
