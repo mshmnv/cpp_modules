@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 17:37:43 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/22 21:36:48 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/23 09:53:20 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,102 +16,125 @@ std::string limits[8] = {"inff", "+inff", "-inff", "nanf", "inf", "+inf", "-inf"
 
 // inf: if (float value - static_cast<int<(value) == 0.0))  -> +.0
 
-Cast::Cast(std::string const & value) : _value(value) { }
+Cast::Cast(std::string const & value) : _value(value), _type(-1) { this->detect_type(); }
 
-Cast::Cast(Cast const & src) : _value(src._value) { }
+Cast::Cast(Cast const & src) { *this = src; }
 
 Cast::~Cast() { }
 
 void	Cast::detect_type() {
-	
-}
-
-void	Cast::printCharValue() {
-	int c;
-
+	for (int i = 0; i < 8; i++)
+		if (limits[i] == this->_value)
+		{
+			this->_type = LIMITS;
+			return ;
+		}
 	if (this->_value.length() == 1)
-		if (isalpha(this->_value.at(0)))
+		if (!isdigit(this->_value.at(0)))
 		{
-			std::cout << "'" << this->_value.at(0) << "'";
+			this->_type = CHAR;
 			return ;
 		}
-	if (isnumber(this->_value.at(0)))
-	{	
-		c = static_cast<int>(this->_value);
-		std::cout << c;
+	else if (this->_value.find('.') == std::string::npos)
+	{
+			this->_type = INT;
+			return ;
 	}
-	
-	if (c < 0 || c > 127)
-		std::cout << "impossible";
-	else if (c < 33 || c > 126)
-		std::cout << "Non displayabal";
+	else if (this->_value.find('f') != std::string::npos)
+	{
+			this->_type = FLOAT;
+			return ;
+	}
 	else
-		std::cout << "'" << c << "'";
+		this->_type = DOUBLE;
+
 }
 
-void	Cast::printIntValue() {
-	int i;
-	try
-	{
-		i = stoi(this->_value);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "impossible";
-		return ;
-	}
-	std::cout << i;
+
+void	Cast::print() {
+	if (this->_type == LIMITS)
+		printLimits();
+	if (this->_type == CHAR)
+		printFromChar();
+	else if (this->_type == INT)
+		printFromInt();
+	// else if (this->_type == FLOAT)
+	// 	printFromFloat();
+	// else if (this->_type == DOUBLE)
+	// 	printFromDouble();
 }
 
-void	Cast::printFloatValue() {
-	float f;
-
-
-	try
-	{
-		f = stof(this->_value);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "impossible";
-		return ;
-	}
-	for (int i = 0; i < 8; i++)
-		if(limits[i] == this->_value)
-		{
-			std::cout << static_cast<float>(f) << "f";
-			return ;
-		}
-	std::cout << (f);
-	if (this->_value.find('.') == -1)
-		std::cout << ".0";
-	std::cout << "f";
+void	printLimits() {
+	// std::cout << 
 }
 
-void	Cast::printDoubleValue() {
-	double d;
+void	Cast::printFromChar() {
+	int c = static_cast<int>(this->_value.at(0));
 	
-	try
-	{
-		d = stod(this->_value);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "impossible";
-		return ;
-	}
-	for (int i = 0; i < 8; i++)
-		if(limits[i] == this->_value)
-		{
-			std::cout << (d);
-			return ;
-		}
-	std::cout << (d);
-	if (this->_value.find('.') == -1)
-		std::cout << ".0";
+	std::cout << "char: ";
+	if (!isprint(c))
+		std::cout << "Non displayabal" << std::endl;
+	else
+		std::cout << "'" << static_cast<char>(c) << "'" << std::endl;
+	std::cout << "int: " << c << std::endl;
+	std::cout << "float: " << c << ".0f" << std::endl;
+	std::cout << "double: " << c << ".0" << std::endl;
+}
+
+void	Cast::printFromInt() {
+	
+}
+
+void	Cast::printFromFloat() {
+// 	float f;
+
+
+// 	try
+// 	{
+// 		f = stof(this->_value);
+// 	}
+// 	catch (std::exception &e)
+// 	{
+// 		std::cout << "impossible";
+// 		return ;
+// 	}
+// 	for (int i = 0; i < 8; i++)
+// 		if(limits[i] == this->_value)
+// 		{
+// 			std::cout << static_cast<float>(f) << "f";
+// 			return ;
+// 		}
+// 	std::cout << (f);
+// 	if (this->_value.find('.') == -1)
+// 		std::cout << ".0";
+// 	std::cout << "f";
+}
+
+void	Cast::printFromDouble() {
+// 	double d;
+	
+// 	try
+// 	{
+// 		d = stod(this->_value);
+// 	}
+// 	catch (std::exception &e)
+// 	{
+// 		std::cout << "impossible";
+// 		return ;
+// 	}
+// 	for (int i = 0; i < 8; i++)
+// 		if(limits[i] == this->_value)
+// 		{
+// 			std::cout << (d);
+// 			return ;
+// 		}
+// 	std::cout << (d);
+// 	if (this->_value.find('.') == -1)
+// 		std::cout << ".0";
 }
 
 Cast&	Cast::operator=(Cast const& src) {
 	this->_value = src._value;
+	this->_type = src._type;
 	return (*this);
 }
