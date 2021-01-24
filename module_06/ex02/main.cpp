@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 12:21:15 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/24 13:16:45 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/24 19:16:22 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,23 @@ void identify_from_pointer(Base * p) {
 
 void identify_from_reference( Base & p) {
 	try {
-		Aclass = dynamic_cast<A&>(p);
+		Base& Aclass = dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
+		(void)Aclass;
 	}
 	catch(std::bad_cast &bc) {}
-	
+	try {
+		Base& Bclass = dynamic_cast<B&>(p);
+		std::cout << "B" << std::endl;
+		(void)Bclass;
+	}
+	catch(std::bad_cast &bc) {}
+	try {
+		Base& Cclass = dynamic_cast<C&>(p);
+		std::cout << "C" << std::endl;
+		(void)Cclass;
+	}
+	catch(std::bad_cast &bc) {}	
 }
 
 int main() {

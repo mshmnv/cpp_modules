@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 17:37:43 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/24 11:39:10 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/24 19:05:50 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void	Cast::detect_type() {
 	else
 		this->_type = DOUBLE;
 }
-
 
 void	Cast::print() {
 	if (this->_type == LIMITS)
