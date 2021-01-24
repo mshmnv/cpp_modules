@@ -1,9 +1,10 @@
 .PHONY: all clean fclean re
 
-NAME = serialize
+NAME = base
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
+HEADER = Base.hpp
 
 all: $(NAME)
 

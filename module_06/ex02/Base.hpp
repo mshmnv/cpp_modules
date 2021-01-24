@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/21 11:41:18 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/24 11:39:57 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/24 12:21:44 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/24 12:37:42 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Cast.hpp"
+#ifndef BASE_HPP
+#define BASE_HPP
 
-int main(int argc, char** argv) {
-	if (argc != 2)
-	{
-		std::cout << "Print this: " << argv[0] << " < value >" << std::endl;
-		return 0;
-	}
-	
-	Cast cast(argv[1]);
-	cast.print();
-	return 0;
-}
+class Base {
+
+private:
+
+public:
+	virtual ~Base() { };
+};
+
+class A: public Base {
+	virtual ~A() {};
+};
+
+class B: public Base {
+	virtual ~B() {};
+};
+
+class C: public Base {
+	virtual ~C() {};
+};
+
+
+#endif

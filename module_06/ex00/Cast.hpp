@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 17:35:14 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/23 09:08:30 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/23 19:25:48 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 #define FLOAT	2
 #define DOUBLE	3
 #define LIMITS	4
-// other & error
 
 #include <iostream>
+#include <sstream>
 
 class Cast {
 
