@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 22:13:17 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/26 00:05:06 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/26 12:34:19 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,8 @@ void	Span::addNumber(int num) {
 }
 
 int		Span::shortestSpan() {
-	try {
-		if (this->_filled < 2)
-			throw ToSmallSizeException();
-	}
-	catch(std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (this->_filled < 2)
+		throw ToSmallSizeException();
 	std::vector<int>::iterator it = this->_container.begin();
 	std::vector<int>::iterator ite = this->_container.end();
 	int shortest = std::abs(*it - *(it + 1));
@@ -54,13 +49,8 @@ int		Span::shortestSpan() {
 }
 
 int		Span::longestSpan() {
-	try {
-		if (this->_filled < 2)
-			throw ToSmallSizeException();
-	}
-	catch(std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (this->_filled < 2)
+		throw ToSmallSizeException();
 	std::vector<int>::iterator minEl = std::min_element(this->_container.begin(), this->_container.end());
 	std::vector<int>::iterator maxEl = std::max_element(this->_container.begin(), this->_container.end());
 	return (*maxEl - *minEl);
@@ -83,5 +73,5 @@ const char*	Span::FullContainerException::what() const throw() {
 }
 
 const char*	Span::ToSmallSizeException::what() const throw() {
-	return "Container is too small to search";
+	return "Container is too small";
 }

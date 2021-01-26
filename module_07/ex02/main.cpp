@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 16:44:05 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/25 21:19:05 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/26 12:18:27 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main() {
 	Array<std::string> str(5);
 	for (int i = 0; i < str.size(); i++) {
 		str[i] = "this is string";
-		std::cout << "str[" << i << "] = " << i << std::endl;
+		std::cout << "str[" << i << "] = " << str[i] << std::endl;
 	}
 	
 	return 0;

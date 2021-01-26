@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 20:33:39 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/25 16:40:54 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/26 12:15:15 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void print( T const & x ) {
 	std::cout << x << std::endl;
 	return;
 }
-
 
 void increment(int& c) {
 	c += 1;

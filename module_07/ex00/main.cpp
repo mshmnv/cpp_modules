@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 19:26:53 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/25 16:22:22 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/26 12:14:01 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int main() {
 	
 	std::cout << std::endl << "Strings" << std::endl;
 
-	std::string c = "chaine1";
-	std::string d = "chaine2";
+	std::string c = "string1";
+	std::string d = "string2";
 	::swap(c, d);
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
