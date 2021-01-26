@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/24 19:40:40 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/25 16:12:36 by lbagg            ###   ########.fr       */
+/*   Created: 2021/01/25 22:13:56 by lbagg             #+#    #+#             */
+/*   Updated: 2021/01/26 00:05:21 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
-
+#include "span.hpp"
 #include <iostream>
 
-template< typename T >
-T const &	max(T const & x, T const & y) {
-	return (x >= y ? x : y);
-}
+int main() {
+	Span sp = Span(5);
+	sp.addNumber(5);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
 
-template< typename T >
-T const &	min(T const & x, T const & y) {
-	return (x <= y ? x : y);
-}
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
 
-template< typename T >
-void		swap(T & x, T & y) {
-	T save = x;
-	x = y;
-	y = save;
+	return 0;
 }
-
-#endif

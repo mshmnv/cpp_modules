@@ -6,15 +6,13 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 17:37:43 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/24 19:05:50 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/24 22:20:27 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cast.hpp"
 
 std::string limits[8] = {"+inff", "-inff", "nanf", "+inf", "-inf", "nan"};
-
-// inf: if (float value - static_cast<int<(value) == 0.0))  -> +.0
 
 Cast::Cast(std::string const & value) : _value(value), _type(-1) { this->detect_type(); }
 
