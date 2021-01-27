@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 22:13:27 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/25 23:29:20 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/27 13:54:20 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,6 @@ public:
 
 	Span& operator=(Span const & src);
 
-	void	addNumber(int num);
-	int		shortestSpan();
-	int		longestSpan();
-	
 	class FullContainerException : public std::exception {
 		public:
 			virtual const char* what() const throw();
@@ -44,6 +40,22 @@ public:
 		public:
 			virtual const char* what() const throw();
 	};
+
+	void	addNumber(int num);
+
+	template<typename T>
+	void	addNumber(T& another) {
+			this->_filled = this->_size - this->_filled;
+			if (this->_filled == 0)
+				throw FullContainerException();
+			this->_container = another;
+			this->_size = another.size();
+	}
+
+	int		shortestSpan();
+	int		longestSpan();
+	
+	
 };
 
 

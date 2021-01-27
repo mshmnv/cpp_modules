@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 21:37:34 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/25 22:06:11 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/27 15:13:48 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ int& easyfind(T& container, int toFind) {
 		throw NotFoundException();
 	return (*item);
 }
-
 
 #endif
