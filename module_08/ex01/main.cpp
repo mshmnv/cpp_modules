@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 22:13:56 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/27 15:18:15 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/28 22:22:33 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int main() {
 
 	std::cout << std::endl << "Copy Container" << std::endl;
 	Span s3 = Span(sp);
-	std::cout << "Shortest: " << sp.shortestSpan() << std::endl;
-	std::cout << "Longest: " << sp.longestSpan() << std::endl;
+	std::cout << "Shortest: " << s3.shortestSpan() << std::endl;
+	std::cout << "Longest: " << s3.longestSpan() << std::endl;
 
 
 	std::cout << std::endl << "Better addNumber" << std::endl;

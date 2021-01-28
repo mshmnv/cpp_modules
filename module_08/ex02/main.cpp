@@ -6,7 +6,7 @@
 /*   By: lbagg <lbagg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 12:39:30 by lbagg             #+#    #+#             */
-/*   Updated: 2021/01/27 15:12:21 by lbagg            ###   ########.fr       */
+/*   Updated: 2021/01/28 22:22:49 by lbagg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int main() {
 	std::cout << std::endl << "Stack from MutantStack" << std::endl;
 	std::stack<int> s(mstack);
 	std::cout << "Top: " << s.top() << std::endl;
-	mstack.pop();
+	s.pop();
 	std::cout << "Size: " << s.size() << std::endl;
 
 	return 0;
